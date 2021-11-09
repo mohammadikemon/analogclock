@@ -1,0 +1,344 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  height: 100vh;
+  align-items: center;
+  display: flex;
+  color: wheat;
+  justify-content: center;
+}
+
+.clockWrapper {
+  width: 600px;
+  height: 600px;
+}
+
+.clockWrapper .anaClock {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 13px solid rgba(245, 222, 179, 0.829);
+  box-shadow: inset 0px 0px 20px 0px rgb(219, 209, 189);
+  position: relative;
+  background-color: rgb(29, 29, 27);
+}
+
+.clockWrapper .anaClock::before {
+  position: absolute;
+  content: "";
+  width: 45px;
+  height: 45px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: crimson;
+  z-index: 3;
+}
+
+.clockWrapper .anaClock .hand {
+  --rotation: 0;
+  width: 12px;
+  height: 30%;
+  background-color: rgb(89, 250, 15);
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 1;
+  transform-origin: bottom;
+  box-shadow: -2px 0px 5px 0px rgb(109 107 103);
+}
+
+.clockWrapper .anaClock .minute {
+  width: 10px;
+  height: 43%;
+  z-index: 2;
+  background-color: crimson;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clockWrapper .anaClock .second-Kata {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid rgba(245, 222, 179, 0.829);
+  top: 50%;
+  left: 62%;
+  transform: translateY(-50%);
+  box-shadow: inset 0px 0px 10px 0px rgb(219, 209, 189);
+}
+
+.clockWrapper .anaClock .second-Kata::before {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clockWrapper .anaClock .second-Kata::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid red;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.clockWrapper .anaClock .second-Kata .second-hand {
+  --rotation: 0;
+  position: absolute;
+  height: 55%;
+  width: 3px;
+  background-color: red;
+  bottom: 35%;
+  left: 50%;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  transform-origin: 45% 73%;
+  z-index: 1;
+  border: 1.5px solid red;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+}
+
+.clockWrapper .anaClock .second-Kata .second {
+  --rotation: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 8px;
+  transform: rotate(var(--rotation));
+  font-size: 14px;
+}
+
+.clockWrapper .anaClock .second-Kata .second-number1 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 30deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number2 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 60deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number3 {
+  --rotation: 90deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number4 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 120deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number5 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 150deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number6 {
+  --rotation: 180deg;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 62.5%;
+  left: 49.5%;
+  transform: translate(-50%, 0%);
+}
+.clockWrapper .anaClock .second-Kata .second-number7 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 210deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number8 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 240deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number9 {
+  --rotation: 270deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number10 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 300deg;
+}
+.clockWrapper .anaClock .second-Kata .second-number11 {
+  font-size: 9px;
+  padding-top: 10px;
+  --rotation: 330deg;
+}
+
+.clockWrapper .anaClock .number {
+  --rotation: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--rotation));
+  position: absolute;
+  text-align: center;
+  font-size: 30px;
+  padding: 10px 0 0 0;
+}
+
+.clockWrapper .anaClock .number1 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 30deg;
+}
+.clockWrapper .anaClock .number2 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 60deg;
+}
+.clockWrapper .anaClock .number3 {
+  --rotation: 90deg;
+}
+.clockWrapper .anaClock .number4 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 120deg;
+}
+.clockWrapper .anaClock .number5 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 150deg;
+}
+.clockWrapper .anaClock .number6 {
+  --rotation: 180deg;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 69%;
+  left: 49.5%;
+  transform: translate(-50%, 0%);
+}
+.clockWrapper .anaClock .number7 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 210deg;
+}
+.clockWrapper .anaClock .number8 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 240deg;
+}
+.clockWrapper .anaClock .number9 {
+  --rotation: 270deg;
+}
+.clockWrapper .anaClock .number10 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 300deg;
+}
+.clockWrapper .anaClock .number11 {
+  padding-top: 13px;
+  font-size: 22px;
+  --rotation: 330deg;
+}
+
+.clockWrapper .anaClock .time-format {
+  position: absolute;
+  width: fit-content;
+  padding: 3px 7px;
+  background-color: rgb(189, 181, 181);
+  border-radius: 7px;
+  font-size: 40px;
+  font-family: monospace;
+  top: 50%;
+  left: 25%;
+  color: #000;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0px 0px 10px 0px rgb(32, 29, 29);
+}
+
+.clockWrapper .anaClock .designer {
+  position: absolute;
+  font-size: 28px;
+  font-family: sans-serif;
+  top: 22%;
+  left: 50%;
+  width: fit-content;
+  transform: translate(-50%, 0%);
+}
+
+@media (max-width: 800px) {
+  .clockWrapper {
+    width: 380px;
+    height: 380px;
+  }
+
+  .clockWrapper .anaClock::before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .clockWrapper .anaClock .hand {
+    width: 10px;
+  }
+
+  .clockWrapper .anaClock .minute {
+    width: 8px;
+  }
+  .clockWrapper .anaClock .number {
+    font-size: 23px;
+  }
+
+  .clockWrapper .anaClock .number6 {
+    top: 67%;
+  }
+
+  .clockWrapper .anaClock .second-Kata {
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+    left: 60%;
+  }
+
+  .clockWrapper .anaClock .second-Kata::before {
+    width: 11px;
+    height: 11px;
+  }
+
+  .clockWrapper .anaClock .second-Kata::after {
+    width: 37px;
+    height: 37px;
+  }
+
+  .clockWrapper .anaClock .second-Kata .second {
+    font-size: 10px;
+    padding-top: 3px;
+  }
+
+  .clockWrapper .anaClock .second-Kata .second-number6 {
+    top: 65%;
+  }
+
+  .clockWrapper .anaClock .time-format {
+    font-size: 25px;
+  }
+
+  .clockWrapper .anaClock .designer {
+    font-size: 18px;
+  }
+}
